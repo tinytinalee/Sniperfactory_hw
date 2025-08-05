@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid darkgray;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>메뉴</h1>
+      <nav>
+        <ul>
+          <li><a href="#join">회원가입</a></li>
+          <li><a href="#profile">프로필 정보</a></li>
+          <li><a href="#qna">문의하기</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+
+    <main>
+      <section id="join">
+        <h2>회원가입</h2>
+
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" />
+        <br /><br />
+
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" />
+        <br /><br />
+
+        <label for="pwd">비밀번호:</label>
+        <input type="password" id="pwd" name="pwd" />
+        <br /><br />
+
+        <label for="age">나이:</label>
+        <input type="number" id="age" name="age" />
+        <br /><br />
+
+        <label for="gender">성별: </label>
+        <input type="radio" id="male" name="gender" value="남성" required />
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="여성" />
+        <label for="female">여성</label>
+        <br /><br />
+
+        <label for="intro">자기소개:</label>
+        <textarea id="intro" name="intro"></textarea>
+        <br /><br />
+
+        <label for="hobby">좋아하는 취미:</label>
+        <select name="hobby" id="hobby">
+          <option value="넷플릭스 시청">넷플릭스 시청</option>
+          <option value="운동">운동</option>
+          <option value="독서">독서</option>
+          <option value="바이올린 연주">바이올린 연주</option>
+          <option value="베이킹">베이킹</option>
+        </select>
+        <br /><br />
+
+        <label for="photo">프로필 사진 업로드:</label>
+        <input type="file" id="photo" name="photo" />
+        <br /><br />
+
+        <button type="button">회원가입</button>
+        <button type="reset">초기화</button>
+
+        <label for="progress">업데이트 진행 상황:</label>
+        <progress id="progress" value="100" max="100"></progress>
+      </section>
+      <hr />
+
+      <section id="profile">
+        <h2>프로필 정보</h2>
+        <!--프로필 정보 요약-->
+        <table>
+          <col style="width: 20%" />
+          <col style="width: 80%" />
+
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>내용</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th>프로필</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>이름</th>
+              <td>이승원</td>
+            </tr>
+            <tr>
+              <th>이메일</th>
+              <td>leewon0209@naver.com</td>
+            </tr>
+            <tr>
+              <th>나이</th>
+              <td>29</td>
+            </tr>
+            <tr>
+              <th>성별</th>
+              <td>여성</td>
+            </tr>
+            <tr>
+              <th>자기소개</th>
+              <td>안녕하세요. 이승원입니다.</td>
+            </tr>
+            <tr>
+              <th>취미</th>
+              <td>넷플릭스 시청</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="2">프로필 정보가 성공적으로 업데이트되었습니다.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <hr />
+
+      <section id="qna">
+        <h2>문의하기</h2>
+
+        문의: <a href="example@example.com">example@example.com</a> <br /><br />
+        전화: 010-1234-5678
+        <br /><br />
+        주소: 서울특별시 중구 예제로 123
+      </section>
+    </main>
+    <footer>
+      <h3>오시는 길</h3>
+      <img src="./map.png" width="100%" />
+      <b>Copyright &copy; 2024</b> 프로필 관리 페이지
+    </footer>
+  </body>
+</html>
