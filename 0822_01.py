@@ -1,51 +1,54 @@
-# 학생들의 이름과 점수 정보를 리스트로 관리하는 코드 구현
+# 딕셔너리를 활용하여 간단한 주소록 프로그램 작성
 
-# 리스트 생성
-students = []
-
-
-# 학생 추가
-def add_student(name, score):
-    students.append([name, score])
-    print(f"{name} 학생이 추가되었습니다")
+infos = {}
 
 
-# 학생 삭제
-def remove_student(name):
-    for student in students:
-        if name in student:
-            students.remove(student)
-            print(f"{name} 학생이 삭제되었습니다")
-            return
-    print("존재하지 않는 학생입니다")
+# 연락처 추가
+def add_info(name, phone, email, address):
+    infos[name] = {"phone": phone, "email": email, "address": address}
+    print(f"{name}님의 연락처가 추가되었습니다.")
 
 
-# 성적 수정
-def update_student(name, new_score):
-    for student in students:
-        if name in student:
-            student[1] = new_score
-            print(f"{name} 학생 점수가 수정되었습니다")
-            return
-    print("존재하지 않는 학생입니다")
+# 연락처 삭제
+def delete_info(name):
+    if name in infos:
+        del infos[name]
+        print(f"{name}님의 연락처가 삭제되었습니다.")
+    else:
+        print("존재하지 않는 연락처입니다.")
 
 
-# 전체 목록 출력
-def print_all():
-    if not students:
-        print("등록된 학생이 없습니다")
-        return
-    for student in students:
-        print(student[0], student[1])
+# 연락처 검색
+def search_info(name):
+    if name in infos:
+        info = infos[name]
+        print(
+            f"[{name}] 전화: {info['phone']}, 이메일: {info['email']}, 주소: {info['address']}"
+        )
+    else:
+        print("존재하지 않는 연락처입니다.")
 
 
-# 통계 출력
-def print_stats():
-    if not students:
-        print("등록된 학생이 없습니다")
-        return
-    scores = [int(student[1]) for student in students]
-    최고 = max(scores)
-    최저 = min(scores)
-    평균 = sum(scores) / len(scores)
-    print("최고점수", 최고, "최저점수", 최저, "평균점수", 평균)
+# 연락처 수정
+def update_info(name, phone=None, email=None, address=None):
+    if name in infos:
+        if phone:
+            infos[name]["phone"] = phone
+        if email:
+            infos[name]["email"] = email
+        if address:
+            infos[name]["address"] = address
+        print(f"{name}님의 연락처가 수정되었습니다.")
+    else:
+        print("존재하지 않는 연락처입니다.")
+
+
+# 모든 연락처 보기
+def list_infos():
+    if not infos:
+        print("등록된 연락처가 없습니다.")
+    else:
+        for name, info in infos.items():
+            print(
+                f"[{name}] 전화: {info['phone']}, 이메일: {info['email']}, 주소: {info['address']}"
+            )
