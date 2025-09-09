@@ -1,5 +1,7 @@
 # 주어진 데이터셋에서 튜플을 활용하여 다음 분석을 수행하세요
 
+YEAR, QUARTER, PRODUCT, PRICE, QUANTITY, REGION = 0, 1, 2, 3, 4, 5
+
 sales_data = [
     (2020, 1, "노트북", 1200, 100, "서울"),
     (2020, 1, "스마트폰", 800, 200, "부산"),
@@ -23,8 +25,8 @@ sales_data = [
 print("연도별 판매량")
 years = []
 for row in sales_data:
-    year = row[0]
-    qty = row[4]
+    year = row[YEAR]
+    qty = row[QUANTITY]
     found = False
     for y in years:
         if y[0] == year:
@@ -39,8 +41,8 @@ for y in years:
 print("\n제품별 평균 가격")
 products = []
 for row in sales_data:
-    product = row[2]
-    price = row[3]
+    product = row[PRODUCT]
+    price = row[PRICE]
     found = False
     for p in products:
         if p[0] == product:
@@ -56,8 +58,8 @@ for p in products:
 print("\n최대 판매 지역")
 regions = []
 for row in sales_data:
-    region = row[5]
-    qty = row[4]
+    region = row[REGION]
+    qty = row[QUANTITY]
     found = False
     for r in regions:
         if r[0] == region:
@@ -72,8 +74,8 @@ print(f"{max_region[0]}: {max_region[1]}")
 print("\n분기별 매출")
 quarters = []
 for row in sales_data:
-    quarter = row[1]
-    revenue = row[3] * row[4]
+    quarter = row[QUARTER]
+    revenue = row[PRICE] * row[QUANTITY]
     found = False
     for q in quarters:
         if q[0] == quarter:
