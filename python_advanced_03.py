@@ -62,8 +62,8 @@ class Library:
         return [b for b in self.books.values() if keyword in b.author]
 
     # ISBN으로 검색
-    def search_by_isbn(self, isbn):
-        return self.books.get(isbn)
+    def search_by_isbn(self, keyword):
+        return [b for b in self.books.values() if keyword in b.isbn]
 
     # 도서 대출
     def borrow(self, member_id, isbn):
