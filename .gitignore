@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code settings
+.vscode/
+
+# Virtual environments
+venv/
+.env/
+
+# Logs
+*.log
+
+# Mac OS system files (혹시 맥에서 작업할 경우)
+.DS_Store
